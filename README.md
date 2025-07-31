@@ -73,11 +73,11 @@ The name of the output file is defined along the code and could be changed with 
 
 **Input and output files for testing the code are also available in this GIT:**
 
-[example_input_files/](example_input_files)
+[example_input_files](https://github.com/lacmaufpb/eCOTAT/tree/main/Example_InputFiles)
 
 	https://github.com/lacmaufpb/eCOTAT/tree/main/Example_InputFiles
 
-[example_output_files/](example_output_files)
+[example_output_files](https://github.com/lacmaufpb/eCOTAT/tree/main/Example_OutputFiles)
 
 	https://github.com/lacmaufpb/eCOTAT/tree/main/Example_OutputFiles
 
