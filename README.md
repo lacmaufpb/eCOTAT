@@ -50,7 +50,7 @@ in the 'num_threads()' argument prior to the two parallelized loops.
 
 **FLOW DIRECTION CODE:**
 
-G	H	A	ArcGIS:		32	64	128	eCOTAT+:	64	128	1
+G/tH/tA/tArcGIS:/t32	64	128	eCOTAT+:	64	128	1
 
 F	*	B			16	*	1			32	*	2
 
