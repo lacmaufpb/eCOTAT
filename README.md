@@ -24,7 +24,7 @@ AVAILABILITY
 -------------
 The source codes are available for download at the link: 
 
-	https://github.com/lacmaufpb/Upscaling-1.0 
+	https://github.com/lacmaufpb/eCOTAT
 
 REFERENCE
 ============
