@@ -49,6 +49,8 @@ The number of cores for the parallelization should be adjusted in the lines 368 
 in the 'num_threads()' argument prior to the two parallelized loops.
 
 **FLOW DIRECTION CODE:**
+| Header 1 | Header 2 | Header 3 |
+|----------|----------|----------|
 
 |   |   |   |  ||     ArcGIS: ||  || eCOTAT+:   ||
 | G | H	| A |  | 32 | 64 | 128 |  | 64 | 128 | 1 |
