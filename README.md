@@ -75,9 +75,9 @@ The name of the output file is defined along the code and could be changed with 
 
 [example_input_files/](example_input_files)
 
-	[https://github.com/lacmaufpb/eCOTAT/example_input_files/](https://github.com/lacmaufpb/eCOTAT/tree/main/Example_InputFiles)
+	[Example_InputFiles](https://github.com/lacmaufpb/eCOTAT/tree/3fd3cfaef4fee448d39e4781b9f0f75d35c53be4/Example_InputFiles)
 
 [example_output_files/](example_output_files)
 
-	[https://github.com/lacmaufpb/eCOTAT/example_output_files/](https://github.com/lacmaufpb/eCOTAT/tree/main/Example_OutputFiles)
+	[[https://github.com/lacmaufpb/eCOTAT/example_output_files/](https://github.com/lacmaufpb/eCOTAT/tree/main/Example_OutputFiles)](https://github.com/lacmaufpb/eCOTAT/tree/3fd3cfaef4fee448d39e4781b9f0f75d35c53be4/Example_OutputFiles)
 
