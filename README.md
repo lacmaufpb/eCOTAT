@@ -1,5 +1,4 @@
 # eCOTAT+ Efficient parallel upscaling algorithm of river drainage networks for large data sets
-=======
 eCOTAT+ algorithm (Cell Outlet Tracing with an Area Threshold plus)
 
 CONTACT
