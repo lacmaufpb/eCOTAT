@@ -1,0 +1,26 @@
+file format : IDRISI Raster A.1
+file title  : Window from DEM c: 0 r: 0 to c: 9999 r: 9999
+data type   : real
+file type   : binary
+columns     : 10000
+rows        : 10000
+ref. system : utm-24s
+ref. units  : m
+unit dist.  : 1.0000000
+min. X      : 345068.1587670
+max. X      : 355068.1587670
+min. Y      : 9070357.7925460
+max. Y      : 9080357.7925460
+pos'n error : unknown
+resolution  : 1.0000000
+min. value  : 421.0599976
+max. value  : 537.6126709
+display min : 421.0599976
+display max : 537.6126709
+value units : unspecified
+value error : unknown
+flag value  : -9999.0000000
+flag def'n  : missing data
+legend cats : 0
+lineage     :  
+lineage     : 
