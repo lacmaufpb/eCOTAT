@@ -50,11 +50,11 @@ in the 'num_threads()' argument prior to the two parallelized loops.
 
 **FLOW DIRECTION CODE:**
 
-G  H  A          ArcGIS :  32 64 128    eCOTAT+:   64  128  1
+G	H	A	ArcGIS:		32	64	128	eCOTAT+:	64	128	1
 
-F  *  B                    16  *  1                32   *   2
+F	*	B			16	*	1			32	*	2
 
-E  D  C                     8  4  2                16   8   4
+E	D	C			8	4	2			16	8	4
 
 * Verifies if the flow path traced is out of the 3x3 neighbouring cells (in this case, the flow direction of the cell is maintained, according to i. the last outlet pixel found, if any has been found; ii. the neighbouring cell last visited during flow path tracing).
 
