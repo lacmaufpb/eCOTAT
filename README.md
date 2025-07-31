@@ -1,4 +1,4 @@
-# eCOTAT+
+# eCOTAT+ Algorithm for flow direction upscaling
 Efficient parallel upscaling algorithm of river drainage networks for large data sets
 
 CONTACT
@@ -10,7 +10,7 @@ adrianorpaz@ct.ufpb.br
 
 HARDWARE REQUIREMENTS
 -------------
-Devices that run Windows 10 for desktop editions (a 1GHz or faster processor)
+Devices that run Windows 10 for desktop editions (a 1 GHz or faster processor)
 
 SOFTWARE ESPECIFICATIONS
 -------------
@@ -18,7 +18,7 @@ SOFTWARE ESPECIFICATIONS
 
 **SOFTWARE REQUIREMENTS:**	`Fortran 90 compiler`, Windows 
 
-**PROGRAM SIZE:**	36.2 Kb
+**PROGRAM SIZE:**	38.6 Kb
  
 AVAILABILITY
 -------------
@@ -33,16 +33,31 @@ Paz, A.R.; Collischonn, W.; Silveira, A.L.L. Improvements in large scale drainag
 
 VERSION
 ============
-This algorithm version is adapted from Paz et al. (2006) for reading the high-resolution data and processing each low-resolution cell individually. It implies low RAM requirements but a long run time.
+This algorithm is an improvement from COTAT+ algorithm.
 
 USAGE
 ============
 The following input files are required, with the specification as described:
-* **DIRHIGH (.rst;.rdc):** High-resolution flow directions. Raster file, Idrisi/TerrSet format, integer/binary. The following flow direction code must be considered:  1 (northeast), 2 (east), 4 (southeast), 8 (south), 16 (southwest), 32 (west), 64 (northwest), and 128 (north).
-* **AREAHIGH (.rst;.rdc):** High-resolution flow accumulated areas. Raster file, Idrisi/TerrSet format, real/binary.
-* **MASK (optional; .rst;.rdc):** Mask to indicate areas to be/not to be processed (pixels with value 1 or 0, respectively). Raster file, low resolution, Idrisi/TerrSet format, integer/binary. 
-* **INPUT_UPSCALING (.txt):**  Upscaling configuration information. Ascii file.
-The names of the input files are defined along the code and could be changed with caution.
+
+Input files: 
+* **DIRHIGH (.rst;.rdc):**  high resolution flow directions: raster, Idrisi/TerrSet format, integer/binary
+* **AREAHIGH (.rst;.rdc):** high resolution flow accumulated area: raster, Idrisi/TerrSet format, real/binary
+* **INPUT_UPSCALING (.txt):** upscaling configuration (ascii)
+
+The names of the input files are defined along the code and could be changed.
+The number of cores for the parallelization should be adjusted in the lines 368 and 610
+in the 'num_threads()' argument prior to the two parallelized loops.
+
+**FLOW DIRECTION CODE:**
+
+G  H  A          ArcGIS :  32 64 128    eCOTAT+:   64  128  1 
+F  *  B                    16  *  1                32   *   2
+E  D  C                     8  4  2                16   8   4
+
+* Verifies if the flow path traced is out of the 3x3 neighbouring cells (in this case, the flow direction of the cell is maintained, according to i. the last outlet pixel found, if any has been found; ii. the neighbouring cell last visited during flow path tracing).
+
+* The flow path traced is out of the 3x3 neighbouring cells, without reaching any outlet pixel. The flow direction of the cell is defined according to the neighbouring cell last visited during flow path tracing
+
 The configuration of the upscaling is set in the 'input_upscaling' input file. 
 The following information is defined in this file: a) high-resolution cell size (same units of the input raster); b) low-resolution cell size (same units of the input raster); c) parameter Area Threshold (AT; km2); d) parameter Minimum Upstream Flow Path (MUFP; km); e) Selection for using (1) or not (0) a mask.
 For example, for flow direction upscaling from 1 m to 100 m, option a) must assume the value '1', and option b) must assume the value '100'. The definition of AT and MUFP are according to Paz et al. (2006), which recommend AT equal to the low-resolution cell area and MUFP equal to 1/5 of the low-resolution cell size. In the example, AT should be set as 0.01 (i.e., 10000 m2, but in km2), and MUFP should be set as 0.02 (i.e., 20 m, but in km).
