@@ -39,9 +39,9 @@ USAGE
 ============
 The following input files are required, with the specification as described:
 
-Input files: 
-* **DIRHIGH (.rst;.rdc):**  high resolution flow directions: raster, Idrisi/TerrSet format, integer/binary
-* **AREAHIGH (.rst;.rdc):** high resolution flow accumulated area: raster, Idrisi/TerrSet format, real/binary
+Input files:
+* **DIRHIGH (.rst;.rdc):**  high resolution flow directions: raster, Idrisi/TerrSet format, integer/binary (see codification below)
+* **AREAHIGH (.rst;.rdc):** high resolution flow accumulated area: raster, Idrisi/TerrSet format, real/binary, attributes in km2
 * **INPUT_UPSCALING (.txt):** upscaling configuration (ascii)
 
 The names of the input files are defined along the code and could be changed.
@@ -68,7 +68,7 @@ The upscaling algorithm requires an integer number of pixels (high resolution) i
 The flow direction codes of input and output files could also be reclassified from or to other coding systems using the QGIS software.
 
 The algorithm produces the following output file:
-* **DIRLOW (.rst;.rdc):** Low-resolution flow directions. Raster file, Idrisi/TerrSet format, integer/binary. The same flow direction code of the DIRHIGH file is followed: 1 (northeast), 2 (east), 4 (southeast), 8 (south), 16 (southwest), 32 (west), 64 (northwest), and 128 (north).
+* **DIRLOW (.rst;.rdc):** low resolution flow directions: raster, Idrisi/TerrSet format, integer/binary. The same flow direction code of the DIRHIGH file is followed: 1 (northeast), 2 (east), 4 (southeast), 8 (south), 16 (southwest), 32 (west), 64 (northwest), and 128 (north).
 The name of the output file is defined along the code and could be changed with caution.
 
 **Input and output files for testing the code are also available in this GIT:**
