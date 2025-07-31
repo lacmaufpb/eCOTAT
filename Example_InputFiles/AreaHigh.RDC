@@ -1,0 +1,26 @@
+file format : IDRISI Raster A.1
+file title  : Window from AreaHigh c: 8328 r: 5986 to c: 18327 r: 15985
+data type   : real
+file type   : binary
+columns     : 10000
+rows        : 10000
+ref. system : utm-24s
+ref. units  : m
+unit dist.  : 1.0000000
+min. X      : 345068.1588000
+max. X      : 355068.1588000
+min. Y      : 9070357.7925000
+max. Y      : 9080357.7925000
+pos'n error : unknown
+resolution  : 1.0000000
+min. value  : 1.0000000
+max. value  : 915537408.0000000
+display min : 1.0000000
+display max : 915537408.0000000
+value units : unspecified
+value error : unknown
+flag value  : none
+flag def'n  : none
+legend cats : 0
+lineage     :  
+lineage     : 
