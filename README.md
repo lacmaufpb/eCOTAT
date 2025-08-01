@@ -45,24 +45,22 @@ Input files:
 * **INPUT_UPSCALING (.txt):** upscaling configuration (ascii)
 
 The names of the input files are defined along the code and could be changed.
-The number of cores for the parallelization should be adjusted in the lines 368 and 610
+The number of cores for the parallelization should be adjusted in the lines 370 and 612
 in the 'num_threads()' argument prior to the two parallelized loops.
 
 **FLOW DIRECTION CODE:**
-|ArcGIS|    |    |     |eCOTAT+|    |     |   | 
-|------|----|----|-----|-------|----|-----|---|
-|      | 32 | 64 | 128 |       | 64 | 128 | 1 |
-|      | 16 | *  |  1  |       | 32 |  *  | 2 |
-|      | 8  | 4  |  2  |       | 16 |  8  | 4 |
+|eCOTAT+|    |     |   | 
+|-------|----|-----|---|
+|       | 64 | 128 | 1 |
+|       | 32 |  *  | 2 |
+|       | 16 |  8  | 4 |
 
 
 * Verifies if the flow path traced is out of the 3x3 neighbouring cells (in this case, the flow direction of the cell is maintained, according to i. the last outlet pixel found, if any has been found; ii. the neighbouring cell last visited during flow path tracing).
 
 * The flow path traced is out of the 3x3 neighbouring cells, without reaching any outlet pixel. The flow direction of the cell is defined according to the neighbouring cell last visited during flow path tracing
 
-The configuration of the upscaling is set in the 'input_upscaling' input file. 
-The following information is defined in this file: a) high-resolution cell size (same units of the input raster); b) low-resolution cell size (same units of the input raster); c) parameter Area Threshold (AT; km2); d) parameter Minimum Upstream Flow Path (MUFP; km); e) Selection for using (1) or not (0) a mask.
-For example, for flow direction upscaling from 1 m to 100 m, option a) must assume the value '1', and option b) must assume the value '100'. The definition of AT and MUFP are according to Paz et al. (2006), which recommend AT equal to the low-resolution cell area and MUFP equal to 1/5 of the low-resolution cell size. In the example, AT should be set as 0.01 (i.e., 10000 m2, but in km2), and MUFP should be set as 0.02 (i.e., 20 m, but in km).
+The configuration of the upscaling is set in the 'input_upscaling' input file. The following information is defined in this file: a) high-resolution cell size (same units of the input raster); b) low-resolution cell size (same units of the input raster); c) Size of the tile in number of coarse resolution cells; d) parameter Area Threshold (AT; km2); e) parameter Minimum Upstream Flow Path (MUFP; km). For example, for flow direction upscaling from 1 m to 100 m, option a) must assume the value '1', and option b) must assume the value '100'. The definition of AT and MUFP is according to Paz et al. (2006), who recommend AT equal to the low-resolution cell area and MUFP equal to 1/5 of the low-resolution cell size. In the example, AT should be set as 0.01 (i.e., 10,000 m2, but in km2), and MUFP should be set as 0.02 (i.e., 20 m, but in km). If the study region has 100,000 x 100,000 pixels of 1 m resolution and the upscaling will derive 100-m flow directions, there will be 1,000 x 1,000 cells of 100 m resolution. If the size of the tile is set to 10, it comprises 10 x 10 cells of 100 m resolution to be solved each time by the algorithm. The numeric domain will cover 100 x 100 tiles of equal size.
 
 The upscaling algorithm requires an integer number of pixels (high resolution) inside each low-resolution cell. Therefore, the ratio between the high-resolution pixel and the low-resolution cell must be an integer. Additionally, the geographic extension of all input raster must be the same. These input rasters must also follow the specifications regarding data format. The QGIS software could convert raster files from other formats to the Idrisi format required by the algorithm. The Idrisi format was adopted due to having a specific file for the data matrix (the .rst file) and another specific format for the documentation (the .rdc file), and both being very easy to read by a Fortran code. The output file follows this format and could be converted to other raster formats using the QGIS software.
 The flow direction codes of input and output files could also be reclassified from or to other coding systems using the QGIS software.
